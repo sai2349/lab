@@ -1,0 +1,42 @@
+(a) Program code:
+clear;
+clc;
+xdel(winsid()); //close all windows
+s=%s/2/%pi;
+G=syslin('c',20*(s^2+s+0.5),s*(s+1)*(s+10));
+disp(G,'The given transfer function G(s)=')
+a=gca();
+a.clip_state='on';
+nyquist(G,-1000,1000);
+xgrid(color('gray'));
+a.data_bounds=[-1 -3;3 3];
+a.box='on'
+
+(b) Program code: 
+clear;
+clc;
+xdel(winsid()); //close all windows
+s=%s;
+T=syslin('c',25+30*s+5*s^2,168+206*s+89*s^2+16*s^3+s^4);
+disp(T, 'The given loop transfer function G(s)H(s) = ');
+nyquist(T)
+a=gca();
+a.clip_state='on';
+a.data_bounds=[-0.1 -0.2;0.3 0.2];
+a.box='on';
+
+(c) Program code:
+clear;
+clc;
+xdel(winsid()); //close all windows
+s=%s;
+T1=5; T2=10;
+K=1;
+den=(T1*s+1)*(T2*s+1);
+GH=syslin('c',K,den); disp(GH, ‘The given transfer function G(s)H(s)=’)
+nyquist(GH,-1000,1000);
+xgrid(color('gray'));
+a=gca();
+a.clip_state='on';
+a.data_bounds=[-0.3 -0.8;1.3 0.8];
+a.box='on';

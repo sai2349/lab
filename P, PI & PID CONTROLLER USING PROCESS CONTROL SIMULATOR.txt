@@ -1,0 +1,10 @@
+Procedure:
+1. Connections are made as per the schematic connection diagram. 
+2. The PID output is connected with the first order system and with unit feedback input.
+3. Apply a DC input signal ranging from 0 to 5 V.
+4. Now connect using patch cord for the input and set the desired input voltage Vin.
+5. Now connect using patch cord for viewing the output.
+6. Set the constants Kp, Ki and Kd values. 
+7. Set I and D ‘OFF’ for P controller, D ‘OFF’ for PI controller and all kept ON (P I and D) for PID 
+8. Observe the output voltage, Vout at time t = 10 sec and tabulate the readings of the output voltage.
+9. Plot the graph between input voltage and output voltage

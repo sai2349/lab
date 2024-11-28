@@ -1,0 +1,33 @@
+Program code:
+(i) Transfer function from the given poles and zeros
+clc; clear;
+Z=[2;1];P=[0;-3-%i;-3+%i];K=2.5;
+disp(Z,'Enter the zeros Z = ')
+disp(P,'Enter the poles P = ')
+disp(K,'Enter the system gain K = ')
+S=zp2tf(Z,P,K,"c")
+roots(S.num)
+disp(S, 'The obtained transfer function S =')
+
+
+
+(ii) The zeros and poles from the given transfer functions.
+clc
+clear
+H=syslin("d",[45.76+6*%s+2*%s^2],[23.28+3.1*%s+%s^2+3.796*%s^3])
+disp(H, 'The given transfer function H =' )
+[z,p,k]=tf2zp(H)
+disp(z, 'The obtained zeros for the given transfer function z = ');
+disp(p, 'The obtained poles for the given transfer function p = ');
+disp(k, 'The obtained system gain for the given transfer function k = ');
+
+
+
+(iii) Plot zeros and poles in the s plane for the given transfer function 
+clc
+clear
+s=%s;
+n=[2+3*s+4*s^2]; //input numerator of transfer function
+d=[1+s+s^2]; //input denominator of transfer function
+h=syslin("c",n,d);
+plzr(h)
